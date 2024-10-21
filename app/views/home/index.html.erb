@@ -1,0 +1,24 @@
+
+<div style="text-align: center;" class="bg">
+  <%= image_tag "img2.png", width: 400, height: 300 %>
+  <%= image_tag "img.png", width: 500, height: 300 %>
+  <%= image_tag "img3.png", width: 400, height: 300 %>
+</div>
+<h1 style="font-family: system-ui;">Top 10 News Headlines</h1>
+<div class="border">
+<% if @articles.present? %>
+  <ul>
+    <% @articles.each do |article| %>
+      <li style="border-style: solid; border-width: 1px; border-color: blue">
+        <b class="body"><%= article["title"] %></b><br>
+        <%= article["description"] %><br>
+        <a href="<%= article["url"] %>" target="_blank">Read more</a>
+        
+      </li>
+      <br><br>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No news available at the moment.</p>
+<% end %>
+</div?>
